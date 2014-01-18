@@ -1,0 +1,1 @@
+define("LayoutManager",["backbone","underscore","jquery"],function(e,t,n){var r=function(){this.showView=function(e){t.each(this.currentViews,function(e){e.remove()}),this.currentViews=this.currentViews||[],this.currentViews.push(e),e.render()},this.append=function(e){this.currentViews.push(e),n(".app-container").append(e.render().el)}};return r});

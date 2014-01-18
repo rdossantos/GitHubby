@@ -1,0 +1,1 @@
+define("IssueDetailView",["backbone","underscore","jquery"],function(e,t,n){var r=e.View.extend({initialize:function(){t.bindAll(this,"render"),this.template=this.options.template},render:function(){return this.$el.appendTo(n(this.options.selector)),this.$el.html(this.template(this.model.toJSON())),this}});return r});

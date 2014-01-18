@@ -1,0 +1,20 @@
+<h3>{{title}}</h3>
+<div class="issue-submitted clearfix">
+    <img align="left" src="{{user.avatar_url}}" class='gravatar-image img-rounded pull-left'/>
+    <span class="issue-submitted pull-left">User: <a href="{{user.html_url}}">{{user.login}}</a></span>
+    {{#each labels}}
+        <!-- inline css is kinda gross; just a quick hack -->
+        <span class="label pull-left" style="background-color:#{{this.color}} !important; color:#{{this.contrastColor}} !important;">
+            {{this.name}}
+        </span>
+    {{/each}}
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>Issue {{number}} - {{state}}</strong>
+        <small>created: {{createdDate}}</small>
+    </div>
+    <div class="panel-body">
+        {{{bodyHighlighted}}}
+    </div>
+</div>

@@ -1,0 +1,24 @@
+.gravatar-image{
+    width:80px;
+    margin:10px;
+}
+
+.comment-avatar{
+    width:40px;
+}
+
+strong.comment, small.comment{
+    vertical-align: bottom;
+}
+
+.label{
+    margin:0 5px;
+}
+
+.issues.list-group-item-text{
+    padding:10px;
+}
+
+.issue-submitted{
+    clear:both;
+}

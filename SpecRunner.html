@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jasmine Spec Runner</title>
+
+  
+  <link rel="stylesheet" type="text/css" href=".grunt/grunt-contrib-jasmine/jasmine.css">
+  
+
+  <script src=".grunt/grunt-contrib-jasmine/require.js"></script>
+  <script>
+    require.onError = function(error) {
+      var message = error.requireType + ': ';
+      if (error.requireType === 'scripterror' || error.requireType === 'notloaded' && error.requireModules) {
+        message += 'Illegal path or script error: ' + '[\'' + error.requireModules.join("', '") + '\']';
+      } else {
+        message += error.message;
+      }
+
+      throw Error(message);
+    };
+  </script>
+
+  
+  
+  <script src=".grunt/grunt-contrib-jasmine/jasmine.js"></script>
+  
+  <script src=".grunt/grunt-contrib-jasmine/jasmine-html.js"></script>
+  
+  
+
+  <script>
+    
+
+    
+      require.config({
+  "baseUrl": "app",
+  "shim": {
+    "bootstrap": {
+      "deps": [
+        "jquery"
+      ],
+      "exports": "bootstrap"
+    },
+    "underscore": {
+      "exports": "_"
+    },
+    "underscoreBase": {
+      "exports": "_"
+    },
+    "backbone": {
+      "deps": [
+        "jquery",
+        "underscore"
+      ],
+      "exports": "Backbone"
+    },
+    "backbone-paginator": {
+      "deps": [
+        "backbone"
+      ]
+    },
+    "handlebars": {
+      "exports": "Handlebars"
+    },
+    "template": {
+      "exports": "template"
+    },
+    "marked": {
+      "exports": "marked"
+    },
+    "highlightjs": {
+      "exports": "highlightjs"
+    }
+  },
+  "paths": {
+    "bootstrap": "../asset/libs/bootstrap",
+    "backbone": "../asset/libs/backbone",
+    "backbone-paginator": "../asset/libs/backbone.paginator",
+    "underscore": "../asset/libs/underscore.custom",
+    "underscoreBase": "../asset/libs/underscore",
+    "underscore.string": "../asset/libs/underscore.string.min",
+    "jquery": "../asset/libs/jquery.min",
+    "handlebars": "../asset/libs/handlebarsWithHelpers",
+    "template": "../asset/template/template",
+    "marked": "../asset/libs/marked",
+    "highlightjs": "../asset/libs/highlight.min"
+  }
+});
+    
+  </script>
+
+  <script>
+    function launchTest() {
+    require([
+      
+    ],
+    function(){
+      require(['test/App/AppSpec.js','.grunt/grunt-contrib-jasmine/reporter.js'], function(){
+        require(['.grunt/grunt-contrib-jasmine/jasmine-helper.js'], function(){
+          // good to go! Our tests should already be running.
+        })
+      })
+    }
+    )
+  }
+  </script>
+
+  
+  <script>
+  launchTest();
+  </script>
+  
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<h4 class="list-group-item-heading">Issue # {{number}} - {{title}}</h4>
+<p class="issues list-group-item-text row">
+    <img align="left" src="{{user.avatar_url}}" class='gravatar-image img-rounded'/>
+    <i class="fa fa-quote-left fa-lg"></i>{{bodySummary}}<i class="fa fa-quote-right fa-lg"></i><br/>
+    <div class="issue-submitted">
+        <span class="issue-submitted pull-left">User: <a href="{{user.html_url}}">{{user.login}}</a></span>
+        {{#each labels}}
+            <!-- inline css is kinda gross; just a quick hack -->
+            <span class="label" style="background-color:#{{this.color}} !important; color:#{{this.contrastColor}} !important;">
+                {{this.name}}
+            </span>
+        {{/each}}
+    </div>
+</p>
